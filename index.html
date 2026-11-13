@@ -1,0 +1,1164 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<meta name="format-detection" content="telephone=no">
+<meta name="theme-color" content="#431407">
+<title>株式会社MOT | 藤沢市の外壁塗装・屋根塗装・防水・リフォーム</title>
+<meta name="description" content="藤沢市村岡東の株式会社MOT。20年の経験を持つ自社職人が、外壁塗装・屋根塗装・防水工事・リフォームを施工します。藤沢市を拠点に神奈川県全域対応。">
+<meta property="og:type" content="website">
+<meta property="og:title" content="株式会社MOT | 藤沢市の外壁塗装・屋根塗装・防水・リフォーム">
+<meta property="og:description" content="藤沢市村岡東の株式会社MOT。20年の経験を持つ自社職人が、外壁塗装・屋根塗装・防水工事・リフォームを施工します。藤沢市を拠点に神奈川県全域対応。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Zen+Kaku+Gothic+New:wght@400;500;700;900&display=swap" rel="stylesheet">
+<script>document.documentElement.classList.add('js')</script>
+<style>
+/* ============================================================
+   Color / type system（塗装：白・薄グレー × 深いネイビー × 差し色）
+   ============================================================ */
+:root{
+  --accent: #c2410c;
+  --accent-dark: #9a3412;
+
+  /* B2B Service パレット：Primary #0F172A／Secondary #334155／Background #F8FAFC／Border #E2E8F0。
+     アクセント（--accent／店ごとのデータ値）は CTA と要点だけに使う */
+  --white: #ffffff;
+  --bg: #f8fafc;             /* Background */
+  --bg-2: #f1f5f9;           /* 一段沈んだ面 */
+  --card: #ffffff;
+  --navy: #0f172a;           /* Primary：見出し・濃い面 */
+  --navy-2: #1e293b;
+  --navy-3: #020617;
+  --text: #334155;           /* Secondary：本文（白上で約10:1） */
+  --muted: #475569;          /* 補足：bg-2上でも約7:1 */
+  --line: #e2e8f0;           /* Border */
+  --line-strong: #cbd5e1;
+  --on-navy: #f1f5f9;
+  --on-navy-muted: rgba(241, 245, 249, .76); /* ネイビー上で約10:1 */
+  --line-on-navy: rgba(241, 245, 249, .14);
+
+  --accent-soft: color-mix(in srgb, var(--accent) 10%, var(--white));
+  --accent-line: color-mix(in srgb, var(--accent) 42%, transparent);
+  --accent-on-navy: color-mix(in srgb, var(--accent) 62%, #fff);
+
+  --gothic: "Zen Kaku Gothic New", "Hiragino Sans", "Yu Gothic", "YuGothic", "Meiryo", sans-serif;
+  --en: "Barlow Condensed", "Zen Kaku Gothic New", "Arial Narrow", sans-serif;
+
+  --gutter: clamp(20px, 5vw, 56px);
+  --wrap: 1180px;
+  --wide: 1360px;
+  /* セクション余白は3段階：通常／詰める（補足系）／広げる（見せ場） */
+  --sec-y: clamp(88px, 11vw, 148px);
+  --sec-y-sm: clamp(64px, 8vw, 104px);
+  --sec-y-lg: clamp(104px, 13.5vw, 180px);
+  --header-h: 76px;
+  --dock-h: 0px;
+  --radius: 3px;
+  --radius-card: 6px;
+  --ease: cubic-bezier(.22, .61, .36, 1);
+  --ease-out: cubic-bezier(.16, 1, .3, 1);
+  --dur-fast: .18s;          /* 押下・色変化 */
+  --dur: .3s;                /* hover・開閉 */
+  --dur-reveal: .7s;         /* スクロール表示 */
+
+  /* 文字サイズの下限は12px */
+  --fs-xs: .75rem;
+  --fs-sm: .82rem;
+
+  /* 影：接地＋近景＋遠景。境界線（Border）と組み合わせ、影は控えめに */
+  --shadow-rest: 0 1px 2px rgba(15, 23, 42, .05);
+  --shadow: 0 1px 2px rgba(15, 23, 42, .05), 0 8px 16px -8px rgba(15, 23, 42, .1), 0 28px 48px -28px rgba(15, 23, 42, .32);
+  --shadow-panel: 0 2px 4px rgba(15, 23, 42, .04), 0 24px 48px -24px rgba(15, 23, 42, .28);
+  --shadow-cta: 0 1px 0 rgba(255, 255, 255, .14) inset, 0 2px 4px -1px rgba(15, 23, 42, .2), 0 14px 26px -14px rgba(15, 23, 42, .6);
+}
+@media (max-width: 860px){
+  :root{ --header-h: 60px; --dock-h: calc(64px + env(safe-area-inset-bottom)); }
+}
+
+/* ============================================================
+   Base
+   ============================================================ */
+*,*::before,*::after{ box-sizing: border-box; }
+html{ scroll-behavior: smooth; scroll-padding-top: calc(var(--header-h) + 12px); -webkit-text-size-adjust: 100%; }
+@media (prefers-reduced-motion: reduce){ html{ scroll-behavior: auto; } }
+body{
+  margin: 0;
+  background: var(--white);
+  color: var(--text);
+  font-family: var(--gothic);
+  font-size: 16px;
+  line-height: 1.9;
+  letter-spacing: .03em;
+  line-break: strict;
+  overflow-wrap: anywhere;
+  -webkit-font-smoothing: antialiased;
+  -webkit-tap-highlight-color: transparent;
+  padding-bottom: var(--dock-h);
+}
+img{ display: block; max-width: 100%; height: auto; }
+a{ color: inherit; }
+a, button, summary{ touch-action: manipulation; }
+p{ margin: 0; text-wrap: pretty; }
+h1,h2,h3,h4{ margin: 0; font-family: var(--gothic); font-weight: 700; line-height: 1.45; letter-spacing: .04em; font-feature-settings: "palt"; word-break: auto-phrase; text-wrap: balance; color: var(--navy); }
+:focus-visible{ outline: 2px solid var(--accent-dark); outline-offset: 3px; border-radius: 1px; }
+/* 濃い面ではリングを白に（非テキスト3:1） */
+:is(.sec--navy, .area-base, .site-footer, .lb) :focus-visible{ outline-color: #fff; }
+::selection{ background: var(--accent-soft); color: var(--navy); }
+
+.wrap{ width: min(var(--wrap), 100% - var(--gutter) * 2); margin-inline: auto; }
+.skip{ position: absolute; left: 12px; top: -60px; z-index: 200; background: var(--navy); color: var(--on-navy); padding: .6em 1em; text-decoration: none; }
+.skip:focus{ top: 12px; }
+.en{ font-family: var(--en); font-weight: 600; letter-spacing: .08em; }
+
+/* 空のプレースホルダ・未設定リンクを自動で隠す */
+[hidden], a[href=""], a[href="tel:"], .opt:empty, .opt:has(> .v:empty){ display: none !important; }
+
+/* ============================================================
+   Buttons
+   ============================================================ */
+.btn{
+  --bg: var(--accent-dark); --fg: #fff; --bd: var(--bg);
+  display: inline-flex; align-items: center; justify-content: center; gap: .8em;
+  min-height: 56px; padding: .8em 1.8em;
+  background: var(--bg); color: var(--fg);
+  font: 700 .98rem/1.4 var(--gothic); letter-spacing: .08em;
+  text-decoration: none; border: 1px solid var(--bd); border-radius: var(--radius);
+  box-shadow: var(--shadow-cta);
+  transition: background var(--dur) var(--ease), color var(--dur) var(--ease), border-color var(--dur) var(--ease), box-shadow var(--dur) var(--ease), transform var(--dur-fast) var(--ease);
+}
+.btn svg{ width: 1.1em; height: 1.1em; flex: none; transition: transform var(--dur) var(--ease-out); }
+.btn:hover{ --bg: var(--navy); }
+.btn:hover svg{ transform: translateX(3px); }
+.btn:active{ transform: translateY(1px); box-shadow: none; }
+.btn--ghost{ --bg: transparent; --fg: var(--navy); --bd: var(--line-strong); box-shadow: none; }
+.btn--ghost:hover{ --bg: var(--navy); --fg: #fff; --bd: var(--navy); }
+.btn--ghost{ font-weight: 500; }
+
+/* ============================================================
+   Header
+   ============================================================ */
+.site-header{
+  position: sticky; top: 0; z-index: 50;
+  height: var(--header-h);
+  background: color-mix(in srgb, var(--white) 90%, transparent);
+  -webkit-backdrop-filter: blur(12px) saturate(1.2); backdrop-filter: blur(12px) saturate(1.2);
+  border-bottom: 1px solid transparent;
+  transition: border-color .3s var(--ease), box-shadow .3s var(--ease);
+}
+.site-header.is-scrolled{ border-bottom-color: var(--line); box-shadow: 0 8px 28px -22px rgba(19, 35, 59, .55); }
+.site-header .wrap{ height: 100%; display: flex; align-items: center; gap: 24px; width: min(var(--wide), 100% - var(--gutter) * 2); }
+.brand{ display: flex; align-items: center; gap: 12px; min-height: 44px; text-decoration: none; min-width: 0; margin-right: auto; }
+.brand-mark{
+  position: relative; flex: none; width: 44px; height: 44px; display: grid; place-items: center;
+  background: var(--navy); color: #fff;
+  font: 900 1.2rem/1 var(--gothic); letter-spacing: 0; border-radius: var(--radius); overflow: hidden;
+}
+.brand-mark::after{ /* 色見本のような差し色の帯 */
+  content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 5px; background: var(--accent);
+}
+.brand-text{ display: grid; line-height: 1.25; min-width: 0; }
+.brand-name{ font: 700 1.12rem/1.3 var(--gothic); letter-spacing: .08em; color: var(--navy); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.brand-kana{ font-size: var(--fs-xs); letter-spacing: .18em; color: var(--muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+
+.gnav ul{ list-style: none; margin: 0; padding: 0; display: flex; gap: clamp(14px, 1.6vw, 26px); }
+.gnav a{ position: relative; display: flex; align-items: center; min-height: 44px; padding: 0; font-size: .86rem; font-weight: 500; letter-spacing: .06em; text-decoration: none; color: var(--navy); white-space: nowrap; }
+.gnav a::after{ content: ""; position: absolute; left: 0; right: 0; bottom: 8px; height: 2px; background: var(--accent); transform: scaleX(0); transform-origin: right; transition: transform .35s var(--ease); }
+.gnav a:hover::after{ transform: scaleX(1); transform-origin: left; }
+.header-cta{ min-height: 46px; padding: .55em 1.3em; font-size: .88rem; }
+.menu-btn{ display: none; }
+
+@media (max-width: 1100px){
+  .gnav{ display: none; }
+  .menu-btn{
+    display: inline-grid; place-items: center; width: 44px; height: 44px; padding: 0;
+    background: none; border: 1px solid var(--line-strong); border-radius: var(--radius); color: var(--navy); cursor: pointer;
+  }
+  .menu-btn span{ display: block; width: 18px; height: 2px; background: currentColor; position: relative; transition: background .2s; }
+  .menu-btn span::before, .menu-btn span::after{ content: ""; position: absolute; left: 0; width: 100%; height: 2px; background: currentColor; transition: transform .3s var(--ease); }
+  .menu-btn span::before{ top: -6px; } .menu-btn span::after{ top: 6px; }
+  .menu-btn[aria-expanded="true"] span{ background: transparent; }
+  .menu-btn[aria-expanded="true"] span::before{ transform: translateY(6px) rotate(45deg); }
+  .menu-btn[aria-expanded="true"] span::after{ transform: translateY(-6px) rotate(-45deg); }
+  .gnav.is-open{
+    display: block; position: absolute; top: var(--header-h); left: 0; right: 0;
+    background: var(--white); border-bottom: 1px solid var(--line);
+    box-shadow: 0 24px 40px -28px rgba(19, 35, 59, .5);
+    max-height: calc(100svh - var(--header-h)); overflow: auto;
+  }
+  .gnav.is-open ul{ flex-direction: column; gap: 0; width: min(var(--wrap), 100% - var(--gutter) * 2); margin: 0 auto; padding: 8px 0 20px; }
+  .gnav.is-open li + li{ border-top: 1px solid var(--line); }
+  .gnav.is-open a{ padding: 1em .2em; font-size: .95rem; }
+  .gnav.is-open a::after{ display: none; }
+}
+@media (max-width: 860px){
+  .header-cta{ display: none; }
+  .brand-mark{ width: 38px; height: 38px; font-size: 1.05rem; }
+  .brand-mark::after{ height: 4px; }
+  .brand-name{ font-size: 1rem; }
+}
+
+/* ============================================================
+   Hero（完工写真を大きく＋白いコピーパネル）
+   ============================================================ */
+.hero{ position: relative; padding-top: clamp(12px, 1.6vw, 24px); }
+.hero::before{ /* 方眼（技術・精度の気配）をごく淡く */
+  content: ""; position: absolute; z-index: -1; inset: 0 0 auto 0; height: 100%;
+  background:
+    linear-gradient(var(--line) 1px, transparent 1px) 0 0 / 48px 48px,
+    linear-gradient(90deg, var(--line) 1px, transparent 1px) 0 0 / 48px 48px;
+  opacity: .7;
+  -webkit-mask-image: linear-gradient(180deg, transparent, #000 30%, #000 70%, transparent); mask-image: linear-gradient(180deg, transparent, #000 30%, #000 70%, transparent);
+}
+/* 写真は右端まで裁ち落とし、左側だけグリッドに揃える */
+.hero-stage{
+  position: relative; margin-left: max(var(--gutter), calc((100% - var(--wide)) / 2));
+  display: grid; grid-template-columns: minmax(0, 1fr);
+}
+.hero-photo{
+  position: relative; margin: 0 0 0 clamp(0px, 9vw, 140px); overflow: hidden;
+  height: clamp(500px, calc(100svh - var(--header-h) - 120px), 860px);
+  background: var(--bg-2); border-radius: var(--radius-card) 0 0 var(--radius-card);
+}
+.hero-photo img{ width: 100%; height: 100%; object-fit: cover; object-position: 50% 45%; }
+.hero-photo::after{ /* 左下をネイビーで沈め、白パネルとの境界に奥行きを出す */
+  content: ""; position: absolute; inset: 0; pointer-events: none;
+  background:
+    linear-gradient(200deg, rgba(15, 23, 42, .32), transparent 28%),
+    linear-gradient(20deg, rgba(15, 23, 42, .4), transparent 42%);
+}
+.hero-cap{
+  position: absolute; z-index: 2; top: 22px; right: max(var(--gutter), calc((100vw - var(--wide)) / 2)); display: flex; align-items: center; gap: .8em;
+  font-size: var(--fs-xs); letter-spacing: .12em; color: #fff; text-shadow: 0 1px 8px rgba(0, 0, 0, .4);
+}
+.hero-cap .en{ font-size: .82rem; letter-spacing: .24em; padding: .15em .7em; border: 1px solid rgba(255, 255, 255, .6); border-radius: 2px; }
+.hero-vert{
+  position: absolute; z-index: 2; left: 0; top: 0; bottom: 0; width: clamp(0px, 9vw, 140px);
+  display: flex; flex-direction: column; align-items: center; justify-content: flex-start; gap: 18px; padding-top: 6px;
+}
+.hero-vert .word{
+  writing-mode: vertical-rl; font: 700 clamp(3.6rem, 6.8vw, 6.6rem)/1 var(--en); letter-spacing: .06em;
+  color: transparent; -webkit-text-stroke: 1px var(--line-strong);
+}
+.hero-vert .chips3{ display: grid; gap: 4px; }
+.hero-vert .chips3 i{ display: block; width: 26px; height: 10px; border-radius: 1px; }
+.hero-vert .chips3 i:nth-child(1){ background: var(--navy); }
+.hero-vert .chips3 i:nth-child(2){ background: var(--accent); }
+.hero-vert .chips3 i:nth-child(3){ background: var(--bg-2); box-shadow: inset 0 0 0 1px var(--line); }
+
+.hero-panel{
+  position: relative; z-index: 3; width: min(700px, 58%);
+  margin: calc(-1 * clamp(220px, 24vw, 330px)) 0 0 0;
+  background: var(--white); padding: clamp(36px, 4vw, 60px) clamp(28px, 3.8vw, 60px) clamp(32px, 3.2vw, 48px) 0;
+}
+.hero-panel::before{ /* 3色の塗り見本バー */
+  content: ""; position: absolute; top: 0; left: 0; width: 132px; height: 4px;
+  background: linear-gradient(90deg, var(--navy) 0 33.3%, var(--accent) 33.3% 66.6%, var(--line-strong) 66.6%);
+}
+.hero-kicker{ display: flex; flex-wrap: wrap; align-items: center; gap: 6px 14px; margin-bottom: clamp(18px, 2vw, 26px); font-size: .84rem; font-weight: 700; letter-spacing: .14em; color: var(--accent-dark); }
+.hero-kicker span + span{ display: inline-flex; align-items: center; gap: 14px; color: var(--navy); }
+.hero-kicker span + span::before{ content: ""; width: 1px; height: 1em; background: var(--line-strong); }
+.hero-catch{
+  font-size: clamp(2.25rem, 4.5vw, 4.1rem); font-weight: 900; line-height: 1.32; letter-spacing: .02em; color: var(--navy);
+}
+.hero-catch em{
+  font-style: normal; color: var(--accent-dark);
+  background: linear-gradient(transparent 74%, color-mix(in srgb, var(--accent) 18%, transparent) 74% 94%, transparent 94%);
+}
+.hero-sub{ margin-top: clamp(20px, 2.4vw, 28px); max-width: 31em; font-size: clamp(1rem, 1.15vw, 1.06rem); line-height: 2; color: var(--text); }
+.hero-actions{ display: flex; flex-wrap: wrap; gap: 12px; margin-top: clamp(28px, 3.2vw, 40px); }
+.hero-actions .btn:first-child{ min-width: 16em; }
+
+/* Proof バー：エリア／資格・特徴／創業／施工件数を縦罫で区切って一列に */
+.hero-bar{
+  width: min(var(--wide), 100% - var(--gutter) * 2); margin: 0 auto clamp(56px, 7vw, 96px);
+  display: flex; flex-wrap: wrap; align-items: stretch;
+  border-block: 1px solid var(--line);
+}
+.hero-meta{ display: contents; }
+.hero-bar > *, .hero-meta > *{
+  display: flex; align-items: center; gap: 10px 14px; margin: 0;
+  padding: 22px clamp(20px, 2.4vw, 32px); border-left: 1px solid var(--line);
+}
+.hero-meta > :first-child{ padding-left: 0; border-left: 0; }
+.hero-area .en, .hw-label .en{
+  font: 600 .8rem/1 var(--en); letter-spacing: .26em; color: var(--muted); text-transform: uppercase;
+}
+.hero-area{ flex-wrap: wrap; font-size: .92rem; font-weight: 700; color: var(--navy); }
+.hero-badges{ flex-wrap: wrap; gap: 8px 18px; }
+.hero-badges > *, .badge{
+  display: inline-flex; align-items: center; gap: .55em;
+  font-size: .88rem; font-weight: 700; letter-spacing: .04em; color: var(--navy);
+}
+.hero-badges > *::before{ /* チェック印 */
+  content: ""; flex: none; width: 16px; height: 16px; border-radius: 50%;
+  background: var(--accent-dark) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='%23fff' stroke-width='2'%3E%3Cpath d='M4.5 8.2l2.2 2.2 4.8-4.8'/%3E%3C/svg%3E") center / 12px no-repeat;
+}
+/* 創業年：塗り見本のような小さな色票を添えて、太字で */
+.since{ font: 900 1.12rem/1.2 var(--gothic); letter-spacing: .06em; color: var(--navy); }
+.since::before{ content: ""; flex: none; width: 10px; height: 22px; border-radius: 1px; background: linear-gradient(var(--navy) 0 50%, var(--accent) 50%); }
+
+.hero-works{ display: flex; align-items: center; gap: 16px; margin-left: auto; padding-right: 0; }
+.hw-label{ display: grid; gap: 6px; line-height: 1.1; text-align: right; }
+.hw-label b{ font: 700 2.4rem/1 var(--en); color: var(--navy); letter-spacing: .02em; }
+.hw-label b small{ font: 700 var(--fs-xs)/1 var(--gothic); margin-left: .25em; color: var(--muted); }
+.hw-thumbs{ display: flex; gap: 6px; }
+.hw-thumbs button{
+  position: relative; padding: 3px; width: 66px; height: 66px; border: 0; background: var(--white); cursor: zoom-in;
+  box-shadow: 0 0 0 1px var(--line), 0 10px 18px -14px rgba(19, 35, 59, .6); border-radius: 2px;
+  transition: transform .3s var(--ease), box-shadow .3s var(--ease);
+}
+.hw-thumbs button:hover{ transform: translateY(-2px); box-shadow: 0 0 0 1px var(--accent-line), 0 14px 22px -14px rgba(19, 35, 59, .7); }
+.hw-thumbs img{ width: 100%; height: 100%; object-fit: cover; }
+.hw-thumbs .n{ position: absolute; left: 3px; bottom: 3px; padding: 0 .35em; background: var(--navy); color: #fff; font: 600 var(--fs-xs)/1.4 var(--en); letter-spacing: .06em; }
+
+@media (max-width: 1100px) and (min-width: 861px){
+  .hero-panel{ width: min(620px, 68%); }
+  .hero-works{ margin-left: 0; }
+}
+@media (max-width: 860px){
+  .hero{ padding-top: 0; }
+  .hero::before{ display: none; }
+  .hero-stage{ margin-left: 0; }
+  .hero-photo{ margin: 0; height: auto; aspect-ratio: 4 / 4.6; max-height: 70svh; border-radius: 0; }
+  .hero-photo::after{ background: linear-gradient(to top, rgba(15, 23, 42, .5), transparent 40%); } /* 下端キャプションの可読性 */
+  .hero-vert{ display: none; }
+  .hero-cap{ top: auto; bottom: 68px; right: var(--gutter); }
+  .hero-panel{ width: calc(100% - var(--gutter)); margin: -48px 0 0 0; padding: 32px var(--gutter) 8px var(--gutter); }
+  .hero-panel::before{ left: var(--gutter); width: 96px; }
+  .hero-kicker{ margin-bottom: 16px; font-size: .78rem; }
+  .hero-catch{ font-size: clamp(2rem, 8.6vw, 2.6rem); line-height: 1.36; letter-spacing: .01em; }
+  .hero-sub{ margin-top: 18px; }
+  .hero-actions{ margin-top: 28px; gap: 10px; }
+  .hero-actions .btn{ flex: 1 1 100%; min-width: 0; }
+  .hero-actions .btn:first-child{ min-height: 60px; }
+  /* Proof バーはスマホでは罫線で区切った縦の一覧に */
+  .hero-bar{ margin-top: 24px; display: grid; }
+  .hero-bar > *, .hero-meta > *{ padding: 16px 0; border-left: 0; border-top: 1px solid var(--line); }
+  .hero-meta > :first-child{ border-top: 0; }
+  .hero-works{ margin-left: 0; justify-content: space-between; }
+  .hw-label{ text-align: left; order: -1; }
+  .hw-label b{ font-size: 2rem; }
+  .hw-thumbs button{ width: 56px; height: 56px; }
+}
+
+/* ============================================================
+   Section scaffolding（番号は表示中のセクションだけで自動採番）
+   ============================================================ */
+main{ counter-reset: sec; }
+.sec{ padding-block: var(--sec-y); position: relative; }
+.sec--tight{ padding-block: var(--sec-y-sm); }
+.sec--loose{ padding-block: var(--sec-y-lg); }
+.sec--n{ counter-increment: sec; }
+.sec--alt{ background: var(--bg); border-block: 1px solid var(--line); }
+.sec--navy{ background: var(--navy); color: var(--on-navy); }
+/* 見出し：番号（ネイビー）＋アクセントの短い罫＋英字ラベル＋和文タイトル（スイス式の3段組） */
+.sec-head{ margin-bottom: clamp(44px, 6vw, 76px); }
+.sec-label{ display: flex; align-items: center; gap: 16px; margin-bottom: 16px; }
+.sec-no{ font: 700 clamp(2.6rem, 4.4vw, 3.6rem)/.9 var(--en); color: var(--navy); letter-spacing: .01em; font-variant-numeric: tabular-nums; }
+.sec-no::before{ content: counter(sec, decimal-leading-zero); }
+.sec-label::after{ content: ""; flex: 0 0 32px; height: 2px; background: var(--accent); order: 1; }
+.sec-en{ order: 2; font: 600 .86rem/1 var(--en); letter-spacing: .32em; text-transform: uppercase; color: var(--muted); }
+.sec-title{ font-size: clamp(1.7rem, 3.2vw, 2.6rem); font-weight: 900; line-height: 1.32; letter-spacing: .04em; color: var(--navy); }
+.sec-lede{ margin-top: 14px; max-width: 40em; color: var(--muted); font-size: .95rem; }
+.sec--navy .sec-no{ color: #fff; }
+.sec--navy .sec-label::after{ background: var(--accent-on-navy); }
+.sec--navy .sec-en{ color: var(--on-navy-muted); }
+.sec--navy .sec-title{ color: #fff; }
+.sec-head--center{ text-align: center; }
+.sec-head--center .sec-label{ justify-content: center; }
+
+/* ブロック系の共通リセット */
+.blk{ margin: 0; padding: 0; }
+.blk > :is(ol, ul):only-child{ display: contents; }
+.blk li{ list-style: none; }
+.blk img{ width: 100%; object-fit: cover; }
+.blk p + p{ margin-top: .8em; }
+
+/* ============================================================
+   Intro
+   ============================================================ */
+.intro{ padding-block: clamp(64px, 8vw, 112px) clamp(80px, 10vw, 128px); background: var(--bg); position: relative; }
+.intro-grid{ display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.08fr); gap: clamp(32px, 6vw, 96px); align-items: start; }
+.intro .eyebrow{ display: flex; align-items: center; gap: 12px; margin-bottom: 22px; font: 600 .86rem/1 var(--en); letter-spacing: .3em; color: var(--accent-dark); }
+.intro .eyebrow::after{ content: ""; width: 40px; height: 1px; background: var(--accent-line); }
+.intro-lead{
+  font-weight: 900; color: var(--navy); font-size: clamp(1.45rem, 2.6vw, 2.1rem); line-height: 1.7; letter-spacing: .05em;
+  font-feature-settings: "palt"; word-break: auto-phrase; text-wrap: balance;
+}
+.intro-body{ font-size: 1rem; line-height: 2.05; color: var(--text); padding-top: 6px; max-width: 36em; }
+.intro-body p + p{ margin-top: 1.1em; }
+
+.stamps{
+  counter-reset: st; margin-top: clamp(44px, 6vw, 72px);
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr)); gap: 1px;
+  background: var(--line); border: 1px solid var(--line); border-radius: var(--radius-card); overflow: hidden; box-shadow: var(--shadow-rest);
+}
+.stamps > *{
+  counter-increment: st; position: relative; display: grid; align-content: start; gap: 6px;
+  padding: 30px 28px 28px; background: var(--white); min-width: 0;
+}
+.stamps > *::before{ content: counter(st, decimal-leading-zero); font: 700 .9rem/1 var(--en); letter-spacing: .14em; color: var(--accent-dark); margin-bottom: 10px; }
+.stamps > *::after{ content: ""; position: absolute; top: 0; left: 0; width: 0; height: 3px; background: var(--accent); transition: width .6s var(--ease); }
+.stamps > *:hover::after{ width: 100%; }
+.stamps :is(strong, b){ display: block; font-size: clamp(1.4rem, 2.2vw, 1.75rem); font-weight: 900; line-height: 1.35; letter-spacing: .05em; color: var(--navy); }
+.stamps span{ font-size: .9rem; color: var(--muted); line-height: 1.7; }
+@media (max-width: 860px){
+  .intro-grid{ grid-template-columns: 1fr; }
+  .stamps > *{ padding: 22px 22px 20px; }
+}
+
+/* ============================================================
+   Services
+   ============================================================ */
+.svc-grid{ counter-reset: svc; display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 340px), 1fr)); gap: clamp(18px, 2.4vw, 30px); }
+.svc-grid > *, .service-card{
+  counter-increment: svc; position: relative; margin: 0;
+  background: var(--card); border: 1px solid var(--line); border-radius: var(--radius-card); overflow: hidden;
+  display: flex; flex-direction: column; box-shadow: var(--shadow-rest);
+  transition: transform .4s var(--ease-out), box-shadow .4s var(--ease), border-color .4s var(--ease);
+}
+.svc-grid > *:hover{ transform: translateY(-3px); border-color: var(--accent-line); box-shadow: var(--shadow); }
+.svc-grid > *::before{ /* 工事番号 */
+  content: counter(svc, decimal-leading-zero); position: absolute; z-index: 2; top: 0; left: 0;
+  min-width: 52px; padding: 8px 12px 6px; background: var(--navy); color: #fff;
+  font: 700 1.15rem/1 var(--en); letter-spacing: .06em; text-align: center;
+}
+.svc-grid figure{ margin: 0; overflow: hidden; aspect-ratio: 16 / 10; background: var(--bg-2); }
+.svc-grid figure img{ height: 100%; transition: transform .8s var(--ease); }
+.svc-grid > *:hover figure img{ transform: scale(1.04); }
+.service-body, .svc-grid > * > div{ flex: 1; display: flex; flex-direction: column; padding: 28px clamp(24px, 2.4vw, 32px) 30px; }
+.svc-grid > *:not(:has(figure)) > div{ padding-top: 68px; }
+.svc-grid h3{ font-size: 1.26rem; font-weight: 900; line-height: 1.4; letter-spacing: .04em; margin-bottom: 12px; display: flex; align-items: center; gap: .6em; }
+.svc-grid h3::before{ content: ""; flex: none; width: 4px; height: 1.1em; background: var(--accent); border-radius: 1px; }
+.svc-grid p{ font-size: .95rem; line-height: 1.95; color: var(--text); }
+.svc-grid p:has(+ .tags){ padding-bottom: 22px; }
+.svc-grid .tags, .svc-grid [class*="tags"]{ display: flex; flex-wrap: wrap; gap: 6px; margin-top: auto; padding-top: 18px; border-top: 1px solid var(--line); }
+/* タグは中立色（アクセントはCTAと要点だけ） */
+.svc-grid .tag{
+  font-size: .78rem; font-weight: 500; letter-spacing: .04em; line-height: 1.6; padding: .2em .8em; border-radius: 2px;
+  background: var(--bg-2); color: var(--text);
+}
+.svc-grid .tag::before{ content: "#"; margin-right: .15em; opacity: .55; font-family: var(--en); }
+
+/* ============================================================
+   Works（白フチ写真カード＋ライトボックス）
+   ============================================================ */
+.works{ overflow: hidden; }
+.works::before{ /* 背景にごく淡い斜めストライプ（養生・下地のイメージ） */
+  content: ""; position: absolute; inset: 0; pointer-events: none;
+  background: repeating-linear-gradient(-45deg, transparent 0 22px, rgba(255, 255, 255, .025) 22px 23px);
+}
+.works .wrap{ position: relative; }
+.works-intro{ display: flex; justify-content: space-between; align-items: end; gap: 20px 32px; flex-wrap: wrap; margin-bottom: clamp(40px, 5.5vw, 68px); }
+.works-intro .sec-head{ margin-bottom: 0; }
+.works-note{ font-size: .82rem; color: var(--on-navy-muted); display: inline-flex; align-items: center; gap: .6em; }
+.works-note svg{ width: 1.15em; height: 1.15em; }
+.works-grid{ display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 260px), 1fr)); gap: clamp(18px, 2.4vw, 28px); }
+.works-grid > *, .work{
+  position: relative; margin: 0; background: var(--white); color: var(--text);
+  padding: 10px 10px 16px; border-radius: 2px;
+  box-shadow: 0 1px 0 rgba(0, 0, 0, .04), 0 26px 40px -28px rgba(0, 0, 0, .8);
+  display: flex; flex-direction: column;
+  transition: transform .45s var(--ease), box-shadow .45s var(--ease);
+}
+.works-grid > *:hover{ transform: translateY(-4px); box-shadow: 0 1px 0 rgba(0, 0, 0, .04), 0 36px 52px -28px rgba(0, 0, 0, .9); }
+.works-grid > *[data-num]::before{ /* No.01 */
+  content: "No." attr(data-num); position: absolute; z-index: 2; top: 18px; left: 18px; pointer-events: none;
+  padding: .25em .6em .2em; background: rgba(255, 255, 255, .92); color: var(--navy);
+  font: 700 .8rem/1 var(--en); letter-spacing: .1em; border-radius: 1px;
+}
+.works-grid > *::after{ /* 拡大アイコン */
+  content: ""; position: absolute; z-index: 2; top: 18px; right: 18px; width: 34px; height: 34px; border-radius: 50%; pointer-events: none;
+  background: var(--accent-dark) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23fff' stroke-width='1.8'%3E%3Ccircle cx='11' cy='11' r='6'/%3E%3Cpath d='M15.5 15.5L20 20M11 8.5v5M8.5 11h5'/%3E%3C/svg%3E") center / 18px no-repeat;
+  opacity: 0; transform: scale(.8); transition: opacity .3s var(--ease), transform .3s var(--ease);
+}
+.works-grid > *:hover::after{ opacity: 1; transform: none; }
+.works-grid img{ aspect-ratio: 4 / 3; background: var(--bg-2); cursor: zoom-in; transition: filter .4s var(--ease); }
+.works-grid > *:hover img{ filter: brightness(1.04) saturate(1.05); }
+.works-grid figcaption{ display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 2px 12px; margin: 14px 6px 0; }
+.works-grid .work-title, .works-grid figcaption :is(h3, h4){ font-size: .96rem; font-weight: 700; line-height: 1.6; letter-spacing: .04em; color: var(--navy); }
+.works-grid .work-date, .works-grid time{ font: 600 .9rem/1.6 var(--en); letter-spacing: .1em; color: var(--muted); white-space: nowrap; }
+.works-grid p{ margin: 6px 6px 0; font-size: .84rem; line-height: 1.8; color: var(--muted); }
+@media (max-width: 560px){
+  .works-grid{ grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+  .works-grid > *{ padding: 6px 6px 12px; }
+  .works-grid > *[data-num]::before{ top: 10px; left: 10px; font-size: var(--fs-xs); }
+  .works-grid > *::after{ display: none; }
+  .works-grid figcaption{ margin: 10px 2px 0; }
+  .works-grid .work-title{ font-size: .88rem; line-height: 1.55; }
+  .works-grid .work-date{ font-size: .8rem; }
+}
+
+/* Lightbox */
+.lb{ border: 0; padding: 0; margin: 0; width: 100vw; height: 100dvh; max-width: none; max-height: none; background: transparent; color: var(--on-navy); overflow: hidden; }
+.lb::backdrop{ background: rgba(8, 16, 30, .93); -webkit-backdrop-filter: blur(4px); backdrop-filter: blur(4px); }
+.lb[open]{ display: grid; place-items: center; animation: lbIn .35s var(--ease); }
+.lb:not([open]){ display: none; }
+@keyframes lbIn{ from{ opacity: 0; } to{ opacity: 1; } }
+.lb-stage{ margin: 0; display: grid; justify-items: center; gap: 16px; padding: 64px 72px 28px; max-width: 100%; max-height: 100%; }
+.lb-frame{ background: #fff; padding: clamp(6px, 1vw, 12px); box-shadow: 0 30px 80px -30px #000; }
+.lb-img{ max-width: min(1200px, calc(100vw - 160px)); max-height: calc(100dvh - 190px); width: auto; height: auto; object-fit: contain; }
+.lb-cap{ display: flex; flex-wrap: wrap; justify-content: center; align-items: baseline; gap: .4em 1.2em; text-align: center; font-size: .9rem; }
+.lb-cap .c-title{ font-size: 1rem; font-weight: 700; letter-spacing: .06em; }
+.lb-cap .c-date{ font: 600 .95rem/1 var(--en); letter-spacing: .12em; color: var(--on-navy-muted); }
+.lb-count{ position: fixed; top: 22px; left: 26px; font: 600 1rem/1 var(--en); letter-spacing: .2em; color: var(--on-navy-muted); }
+.lb-btn{
+  position: fixed; display: grid; place-items: center; width: 48px; height: 48px; padding: 0;
+  background: rgba(255, 255, 255, .08); color: var(--on-navy); border: 1px solid var(--line-on-navy); border-radius: 50%; cursor: pointer;
+  transition: background .25s var(--ease);
+}
+.lb-btn:hover{ background: rgba(255, 255, 255, .2); }
+.lb-btn svg{ width: 20px; height: 20px; }
+.lb-close{ top: 14px; right: 16px; }
+.lb-prev{ left: 14px; top: 50%; translate: 0 -50%; }
+.lb-next{ right: 14px; top: 50%; translate: 0 -50%; }
+.lb.is-single .lb-prev, .lb.is-single .lb-next, .lb.is-single .lb-count{ display: none; }
+@media (max-width: 700px){
+  .lb-stage{ padding: 64px 12px 90px; }
+  .lb-img{ max-width: calc(100vw - 36px); max-height: calc(100dvh - 220px); }
+  .lb-prev, .lb-next{ top: auto; bottom: 22px; translate: none; }
+  .lb-prev{ left: calc(50% - 60px); } .lb-next{ right: calc(50% - 60px); }
+}
+html.lb-lock{ overflow: hidden; }
+
+/* ============================================================
+   Reasons
+   ============================================================ */
+.reason-list{ display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 440px), 1fr)); gap: clamp(16px, 2vw, 24px); }
+.reason-list > *, .reason{
+  position: relative; margin: 0; display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 4px clamp(20px, 2.6vw, 34px);
+  padding: clamp(28px, 3.2vw, 42px) clamp(26px, 3.2vw, 44px); background: var(--white);
+  border: 1px solid var(--line); border-radius: var(--radius-card); box-shadow: var(--shadow-rest); overflow: hidden;
+}
+.reason-list > *::before{ content: ""; position: absolute; top: 0; left: 0; bottom: 0; width: 3px; background: var(--accent); }
+.reason-num, .reason-list [class*="num"]{
+  display: block; font: 700 clamp(3rem, 5vw, 4.2rem)/.85 var(--en); color: var(--accent-dark); letter-spacing: 0;
+  font-variant-numeric: tabular-nums; padding-right: clamp(18px, 2.4vw, 30px); border-right: 1px solid var(--line);
+  min-height: 100%;
+}
+.reason-list h3{ font-size: 1.2rem; font-weight: 700; letter-spacing: .05em; margin-bottom: 10px; }
+.reason-list p{ font-size: .95rem; line-height: 1.95; }
+@media (max-width: 560px){
+  .reason-list > *{ grid-template-columns: 1fr; }
+  .reason-num, .reason-list [class*="num"]{ border-right: 0; padding: 0 0 14px; margin-bottom: 8px; border-bottom: 1px solid var(--line); font-size: 2.8rem; }
+}
+
+/* ============================================================
+   Flow（工程ライン）
+   ============================================================ */
+.flow-list{ position: relative; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 18px; }
+.flow-list > *, .step{
+  position: relative; margin: 0; padding: 46px 26px 30px; background: var(--white);
+  border: 1px solid var(--line); border-radius: var(--radius-card); box-shadow: var(--shadow-rest);
+}
+.flow-list > *::before{ /* 工程をつなぐライン */
+  content: ""; position: absolute; top: 18px; left: 24px; right: -19px; height: 2px;
+  background: linear-gradient(90deg, var(--accent) 0 30%, var(--line-strong) 30%);
+}
+.flow-list > *:last-child::before{ right: 24px; background: var(--accent); }
+.flow-list > *::after{ /* 工程の節 */
+  content: ""; position: absolute; top: 13px; left: 24px; width: 12px; height: 12px; border-radius: 50%;
+  background: var(--white); border: 3px solid var(--accent);
+}
+.step-num, .flow-list [class*="step-"], .flow-list [class*="num"]{
+  display: block; margin-bottom: 12px; font: 700 1.5rem/1 var(--en); letter-spacing: .08em; color: var(--navy);
+}
+.flow-list h3{ font-size: 1.1rem; font-weight: 700; letter-spacing: .05em; margin-bottom: 10px; }
+.flow-list p{ font-size: .93rem; line-height: 1.95; }
+@media (max-width: 960px){
+  .flow-list{ grid-template-columns: 1fr; gap: 14px; max-width: 680px; }
+  .flow-list > *{ padding: 26px 24px 24px 64px; }
+  .flow-list > *::before{ top: 30px; bottom: -16px; left: 29px; right: auto; width: 2px; height: auto; background: var(--line-strong); }
+  .flow-list > *:last-child::before{ display: none; }
+  .flow-list > *::after{ top: 25px; left: 24px; }
+}
+
+/* ============================================================
+   Area
+   ============================================================ */
+.area-grid{ display: grid; grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr); gap: clamp(32px, 6vw, 96px); align-items: start; }
+.area-base{ position: relative; padding: clamp(30px, 3.6vw, 48px); background: var(--navy); color: var(--on-navy); border-radius: var(--radius-card); overflow: hidden; box-shadow: var(--shadow); }
+.area-base::after{ /* 地図の等高線のような同心円 */
+  content: ""; position: absolute; right: -90px; bottom: -90px; width: 280px; height: 280px; pointer-events: none;
+  background: repeating-radial-gradient(circle, transparent 0 18px, var(--line-on-navy) 18px 19px);
+}
+.area-base .lbl{ font: 600 .86rem/1 var(--en); letter-spacing: .3em; color: var(--accent-on-navy); margin-bottom: 14px; }
+.area-base .city{ font-size: clamp(2.2rem, 4.4vw, 3.4rem); font-weight: 900; line-height: 1.2; letter-spacing: .06em; color: #fff; }
+.area-base .line{ position: relative; margin-top: 18px; padding-top: 18px; border-top: 1px solid var(--line-on-navy); font-size: .98rem; color: var(--on-navy-muted); }
+.chips{ display: flex; flex-wrap: wrap; gap: 10px; margin: 0; padding: 0; list-style: none; }
+.chips > :is(ol, ul){ display: contents; }
+.chips li{
+  display: inline-flex; align-items: center; gap: .55em; min-height: 44px; padding: .35em 1.2em; margin: 0;
+  background: var(--white); border: 1px solid var(--line-strong); border-radius: 2px;
+  font-size: .95rem; font-weight: 500; letter-spacing: .06em; color: var(--navy);
+}
+.chips li::before{ content: ""; width: 7px; height: 7px; background: var(--accent); border-radius: 1px; }
+.area-lbl{ display: flex; align-items: center; gap: 12px; margin-bottom: 18px; font-size: .9rem; font-weight: 700; color: var(--navy); }
+.area-lbl::after{ content: ""; flex: 1; height: 1px; background: var(--line); }
+.area-actions{ margin-top: 34px; }
+@media (max-width: 760px){ .area-grid{ grid-template-columns: 1fr; } }
+
+/* ============================================================
+   FAQ
+   ============================================================ */
+.faq-wrap{ max-width: 900px; margin-inline: auto; }
+.faq-list{ display: grid; gap: 12px; }
+.faq-list details, .faq-item{ background: var(--white); border: 1px solid var(--line); border-radius: var(--radius-card); transition: border-color .3s var(--ease), box-shadow .3s var(--ease); }
+.faq-list details[open]{ border-color: var(--accent-line); box-shadow: var(--shadow); }
+.faq-list summary{
+  list-style: none; cursor: pointer; position: relative;
+  display: grid; grid-template-columns: auto 1fr; gap: 18px; align-items: baseline;
+  padding: 22px 60px 22px 24px; font-size: 1.04rem; font-weight: 700; line-height: 1.7; letter-spacing: .04em; color: var(--navy);
+  transition: color .25s var(--ease);
+}
+.faq-list summary::-webkit-details-marker{ display: none; }
+.faq-list summary::before{ content: "Q"; font: 700 1.6rem/1 var(--en); color: var(--accent-dark); translate: 0 2px; }
+.faq-list summary::after{
+  content: ""; position: absolute; right: 24px; top: 50%; width: 14px; height: 14px; translate: 0 -50%;
+  background: linear-gradient(currentColor, currentColor) center / 100% 2px no-repeat, linear-gradient(currentColor, currentColor) center / 2px 100% no-repeat;
+  transition: transform .35s var(--ease);
+}
+.faq-list details[open] > summary::after{ transform: rotate(45deg); }
+.faq-list summary:hover{ color: var(--accent-dark); }
+.faq-a, .faq-list details > :not(summary){
+  margin: 0 24px; padding: 18px 36px 24px 36px; position: relative; border-top: 1px dashed var(--line-strong);
+  font-size: .95rem; line-height: 2;
+}
+.faq-a::before, .faq-list details > :not(summary):first-of-type::before{ content: "A"; position: absolute; left: 0; top: 16px; font: 700 1.6rem/1 var(--en); color: var(--navy); opacity: .35; }
+@media (max-width: 560px){
+  .faq-list summary{ padding: 18px 46px 18px 18px; font-size: .98rem; gap: 12px; }
+  .faq-list summary::after{ right: 18px; }
+  .faq-a, .faq-list details > :not(summary){ margin: 0 18px; padding: 14px 0 20px 30px; }
+}
+
+/* ============================================================
+   Company
+   ============================================================ */
+.company-grid{ display: grid; grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr); gap: clamp(28px, 5vw, 72px); align-items: start; }
+.info-table{ width: 100%; border-collapse: collapse; font-size: .95rem; }
+.info-table tr{ border-bottom: 1px solid var(--line); }
+.info-table tr:first-child{ border-top: 2px solid var(--navy); }
+.info-table :is(th, td){ padding: 20px 10px; text-align: left; vertical-align: top; line-height: 1.9; }
+.info-table th{ width: 9em; font-weight: 700; letter-spacing: .08em; color: var(--navy); white-space: nowrap; position: relative; padding-left: 20px; }
+.info-table th::before{ content: ""; position: absolute; left: 4px; top: 1.55em; width: 6px; height: 6px; background: var(--accent); }
+.info-table td a{ color: var(--accent-dark); text-underline-offset: .25em; }
+.address-card{ background: var(--white); border: 1px solid var(--line); border-radius: var(--radius-card); padding: clamp(28px, 3.2vw, 40px); position: relative; box-shadow: var(--shadow); }
+.address-card::before{ content: ""; position: absolute; top: -1px; left: -1px; width: 96px; height: 4px; background: linear-gradient(90deg, var(--navy) 0 33.3%, var(--accent) 33.3% 66.6%, var(--bg-2) 66.6%); }
+.address-card .lbl{ font: 600 .86rem/1 var(--en); letter-spacing: .3em; color: var(--accent-dark); margin-bottom: 14px; }
+.address-card .shop{ font-size: 1.3rem; font-weight: 900; line-height: 1.5; letter-spacing: .06em; color: var(--navy); }
+.address-card .kana{ font-size: var(--fs-xs); letter-spacing: .2em; color: var(--muted); margin-bottom: 20px; }
+.address-card address{ font-style: normal; font-size: .95rem; line-height: 1.95; padding-top: 18px; border-top: 1px solid var(--line); }
+.address-card .links{ display: flex; flex-direction: column; gap: 10px; margin-top: 24px; }
+.address-card .links .btn{ --bg: var(--white); min-height: 50px; justify-content: space-between; font-size: .92rem; }
+.address-card .links .btn:hover{ --bg: var(--navy); }
+@media (max-width: 860px){
+  .company-grid{ grid-template-columns: 1fr; }
+  .info-table :is(th, td){ display: block; padding: 0; }
+  .info-table tr{ display: block; padding: 16px 2px; }
+  .info-table th{ width: auto; font-size: .82rem; color: var(--accent-dark); margin-bottom: 4px; padding-left: 14px; }
+  .info-table th::before{ left: 0; top: .7em; }
+}
+
+/* ============================================================
+   Contact
+   ============================================================ */
+.contact{ padding-block: var(--sec-y-lg); overflow: hidden; text-align: center; background: var(--navy-2); }
+.contact::before{ /* ローラーで塗り重ねたような横帯 */
+  content: ""; position: absolute; inset: 0; pointer-events: none;
+  background:
+    linear-gradient(90deg, var(--accent) 0 33.3%, var(--accent-dark) 33.3% 66.6%, var(--navy) 66.6%) top / 100% 6px no-repeat,
+    repeating-linear-gradient(0deg, transparent 0 46px, rgba(255, 255, 255, .03) 46px 92px);
+}
+.contact .wrap{ position: relative; }
+.contact .sec-head{ margin-bottom: 22px; }
+.contact .sec-no::before{ content: none; }
+.contact .sec-no{ font-size: clamp(2rem, 3.4vw, 2.8rem); }
+.contact-shop{ font-size: clamp(.98rem, 1.5vw, 1.12rem); letter-spacing: .08em; color: var(--on-navy-muted); }
+.contact-cta{ margin-top: 44px; display: grid; justify-items: center; gap: 22px; }
+.contact-cta .btn--main{
+  --bg: var(--accent); --fg: #fff; min-height: 78px; padding: 1em 2.8em; font-size: clamp(1.06rem, 1.6vw, 1.18rem); font-weight: 900; min-width: min(100%, 460px);
+  box-shadow: 0 1px 0 rgba(255, 255, 255, .2) inset, 0 0 0 1px rgba(255, 255, 255, .28), 0 0 0 7px rgba(255, 255, 255, .07), 0 22px 40px -20px rgba(0, 0, 0, .65);
+}
+.contact-cta .btn--main:hover{ --bg: #fff; --fg: var(--navy); }
+.contact-sub{ display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 8px 32px; margin-top: 8px; }
+.contact-tel{ display: inline-flex; align-items: center; gap: .6em; min-height: 52px; text-decoration: none; color: #fff; }
+.contact-tel svg{ width: 1.2em; height: 1.2em; color: var(--accent-on-navy); }
+.contact-tel .v{ font: 700 clamp(1.9rem, 4vw, 2.7rem)/1.1 var(--en); letter-spacing: .06em; font-variant-numeric: tabular-nums; }
+.contact-ig{ display: inline-flex; align-items: center; gap: .6em; min-height: 44px; font-size: .92rem; letter-spacing: .06em; color: var(--on-navy-muted); text-decoration: underline; text-decoration-color: var(--line-on-navy); text-underline-offset: .45em; transition: color var(--dur) var(--ease); }
+.contact-ig:hover{ color: #fff; text-decoration-color: currentColor; }
+.contact-ig svg{ width: 1.05em; height: 1.05em; }
+
+/* ============================================================
+   Footer
+   ============================================================ */
+.site-footer{ background: var(--navy-3); color: var(--on-navy-muted); padding: 64px 0 40px; font-size: .88rem; line-height: 1.9; }
+.footer-grid{ display: flex; flex-wrap: wrap; justify-content: space-between; gap: 32px; padding-bottom: 36px; border-bottom: 1px solid var(--line-on-navy); }
+.site-footer .brand-name{ color: #fff; }
+.site-footer .brand-kana{ color: var(--on-navy-muted); }
+.site-footer .brand-mark{ background: var(--navy-2); }
+.footer-info{ display: grid; gap: 6px; max-width: 30em; }
+.footer-info .brand{ margin-bottom: 10px; }
+.footer-info address{ font-style: normal; }
+.footer-nav ul{ list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(2, auto); gap: 0 36px; }
+.footer-nav a{ display: inline-flex; align-items: center; min-height: 44px; text-decoration: none; transition: color var(--dur) var(--ease); }
+.footer-nav a:hover{ color: #fff; }
+.copy{ padding-top: 24px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px; font-size: .78rem; letter-spacing: .1em; }
+
+/* ============================================================
+   Mobile dock
+   ============================================================ */
+.dock{ display: none; }
+@media (max-width: 860px){
+  .dock{
+    position: fixed; z-index: 60; left: 0; right: 0; bottom: 0;
+    display: flex; gap: 8px; padding: 8px 10px calc(8px + env(safe-area-inset-bottom));
+    background: color-mix(in srgb, var(--white) 94%, transparent);
+    -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px);
+    border-top: 1px solid var(--line);
+    box-shadow: 0 -10px 24px -20px rgba(19, 35, 59, .5);
+    transform: translateY(110%); transition: transform .24s var(--ease); /* 退場は速く */
+  }
+  .dock.is-shown{ transform: none; transition: transform .42s var(--ease-out); }
+  .dock a{
+    display: inline-flex; align-items: center; justify-content: center; gap: .55em; min-height: 48px;
+    border-radius: var(--radius); text-decoration: none; font-size: .92rem; font-weight: 700; letter-spacing: .06em;
+    transition: transform var(--dur-fast) var(--ease);
+  }
+  .dock a:active{ transform: scale(.98); }
+  .dock svg{ width: 1.1em; height: 1.1em; flex: none; }
+  .dock-tel{ flex: 0 0 34%; border: 1px solid var(--line-strong); color: var(--navy); background: var(--white); }
+  .dock-cta{ flex: 1 1 auto; background: var(--accent-dark); color: #fff; padding-inline: 1em; min-width: 0; box-shadow: var(--shadow-cta); }
+  .dock-cta span{ white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+}
+
+/* ============================================================
+   Motion（控えめ）
+   ============================================================ */
+.js .reveal{ opacity: 0; transform: translateY(14px); transition: opacity var(--dur-reveal) var(--ease-out), transform var(--dur-reveal) var(--ease-out); transition-delay: var(--d, 0s); }
+.js .reveal.is-in{ opacity: 1; transform: none; }
+/* ファーストビュー写真：ローラーで塗り広げるように左から現れる */
+.js .hero-photo img{ animation: rollIn 1.3s var(--ease-out) both; }
+@keyframes rollIn{ from{ clip-path: inset(0 100% 0 0); transform: scale(1.03); } to{ clip-path: inset(0 0 0 0); transform: none; } }
+.js .hero-panel > *{ animation: copyIn .8s var(--ease-out) both; animation-delay: .35s; }
+.js .hero-panel > .hero-catch{ animation-delay: .43s; }
+.js .hero-panel > :nth-child(n+3){ animation-delay: .51s; }
+@keyframes copyIn{ from{ opacity: 0; transform: translateY(10px); } to{ opacity: 1; transform: none; } }
+
+/* タッチ端末では hover の浮き上がりを残さない */
+@media (hover: none){
+  .svc-grid > *:hover, .works-grid > *:hover, .hw-thumbs button:hover{ transform: none; }
+  .svc-grid > *:hover figure img{ transform: none; }
+  .btn:hover svg{ transform: none; }
+}
+@media (prefers-reduced-motion: reduce){
+  .js .reveal{ opacity: 1; transform: none; transition: none; }
+  .js .hero-photo img, .js .hero-panel > *{ animation: none; }
+  *, *::before, *::after{ transition-duration: .01ms !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; }
+}
+@media print{ .site-header, .dock, .lb{ display: none !important; } body{ padding: 0; } }
+</style>
+</head>
+<body>
+<a class="skip" href="#main">本文へスキップ</a>
+
+<!-- ===================== Header ===================== -->
+<header class="site-header" id="top">
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="株式会社MOT トップへ">
+      <span class="brand-mark" aria-hidden="true">M</span>
+      <span class="brand-text">
+        <span class="brand-name">株式会社MOT</span>
+        <span class="brand-kana">モト</span>
+      </span>
+    </a>
+    <nav class="gnav" id="gnav" aria-label="メインメニュー">
+      <ul>
+        <li><a href="#services">工事・サービス</a></li>
+        <li><a href="#works">施工事例</a></li>
+        <li><a href="#reasons">選ばれる理由</a></li>
+        <li><a href="#flow">ご依頼の流れ</a></li>
+        <li><a href="#area">対応エリア</a></li>
+        <li><a href="#faq">よくある質問</a></li>
+        <li><a href="#company">会社概要</a></li>
+      </ul>
+    </nav>
+    <a class="btn header-cta" data-cta href="https://ig.me/m/mot.tosou">InstagramのDMで相談する</a>
+    <button class="menu-btn" type="button" aria-controls="gnav" aria-expanded="false" aria-label="メニューを開く"><span></span></button>
+  </div>
+</header>
+
+<main id="main">
+
+<!-- ===================== First view ===================== -->
+<section class="hero" aria-labelledby="hero-title">
+  <div class="hero-stage">
+    <figure class="hero-photo">
+      <img src="img/01.jpg" alt="外壁塗装の仕上げの様子" width="1600" height="1000" fetchpriority="high" decoding="async">
+      <figcaption class="hero-cap" aria-hidden="true"><span class="en">PHOTO</span><span class="opt">外壁塗装の仕上げの様子</span></figcaption>
+    </figure>
+    <div class="hero-vert" aria-hidden="true">
+      <span class="chips3"><i></i><i></i><i></i></span>
+      <span class="word">PAINTING</span>
+    </div>
+    <div class="hero-panel">
+      <p class="hero-kicker"><span>藤沢市</span><span>外壁塗装・防水・リフォーム</span></p>
+      <h1 class="hero-catch" id="hero-title">もっと、<em>ていねいに</em>。もっと、笑顔に。</h1>
+      <p class="hero-sub">藤沢市を拠点に、神奈川県全域で外壁・屋根塗装を行う株式会社MOT。20年の経験を持つ自社職人が、一つひとつの現場を丁寧に仕上げます。</p>
+      <div class="hero-actions">
+        <a class="btn" data-cta href="https://ig.me/m/mot.tosou">InstagramのDMで相談する<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a class="btn btn--ghost" href="#works">施工事例を見る</a>
+      </div>
+    </div>
+  </div>
+  <div class="hero-bar">
+    <div class="hero-meta">
+      <p class="hero-area"><span class="en">AREA</span>藤沢市の外壁・屋根塗装</p>
+      <div class="hero-badges opt"><span class="badge">自社職人が施工</span><span class="badge">20年の経験</span><span class="badge">神奈川県全域対応</span></div>
+      <p class="since opt"></p>
+    </div>
+    <!-- 施工事例の写真から自動生成（事例がなければ非表示） -->
+    <div class="hero-works" id="heroWorks" hidden>
+      <p class="hw-label"><span class="en">WORKS</span><b class="hw-count"></b></p>
+      <div class="hw-thumbs"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== Intro ===================== -->
+<section class="intro" id="intro" aria-label="ごあいさつ">
+  <div class="wrap">
+    <div class="intro-grid">
+      <div class="reveal">
+        <p class="eyebrow">ABOUT US</p>
+        <p class="intro-lead">「もっと、ていねいに。もっと、満足を。もっと、笑顔に。」</p>
+      </div>
+      <div class="intro-body reveal" style="--d:.12s"><p>株式会社MOTは、藤沢市村岡東を拠点に外壁塗装・屋根塗装を手がける会社です。施工は20年の経験を持つ自社職人。仕上がりの美しさだけでなく、見えない部分の仕事にもこだわります。</p><p>塗装のほか、防水工事、内装・外装リフォーム、駐車場のライン引きやアスファルト補修まで対応しています。一度施工したお客様からのリピートや、ご紹介のご依頼もいただいています。</p></div>
+    </div>
+    <div class="stamps opt reveal" style="--d:.18s"><div class="stamp"><strong>20年の経験</strong><span>自社職人による施工</span></div><div class="stamp"><strong>神奈川県全域</strong><span>藤沢市を拠点に対応</span></div><div class="stamp"><strong>外装まとめて</strong><span>塗装・防水・リフォーム</span></div></div>
+  </div>
+</section>
+
+<!-- ===================== Services ===================== -->
+<section class="sec sec--n" id="services" data-block aria-labelledby="services-title">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="sec-label"><span class="sec-no" aria-hidden="true"></span><span class="sec-en">Services</span></p>
+      <h2 class="sec-title" id="services-title">対応できる工事・サービス</h2>
+    </div>
+    <div class="svc-grid blk" data-stagger><article class="service-card"><figure><img src="img/01.jpg" alt="外壁塗装" loading="lazy"></figure><div class="service-body"><h3>外壁塗装</h3><p>外壁の状態に合わせた塗料選びと、下塗り・中塗り・上塗りの工程で仕上げます。</p><div class="tags"><span class="tag">外壁</span><span class="tag">戸建て</span></div></div></article><article class="service-card"><figure><img src="img/03.jpg" alt="屋根塗装・屋根工事" loading="lazy"></figure><div class="service-body"><h3>屋根塗装・屋根工事</h3><p>スレート・トタン・瓦の屋根塗装のほか、屋根修理、カバー工法、葺き替えにも対応します。</p><div class="tags"><span class="tag">屋根塗装</span><span class="tag">カバー工法</span><span class="tag">葺き替え</span></div></div></article><article class="service-card"><div class="service-body"><h3>防水工事</h3><p>住まいを雨水から守る防水工事。雨漏りのご相談も承ります。</p><div class="tags"><span class="tag">防水</span><span class="tag">雨漏り対策</span></div></div></article><article class="service-card"><figure><img src="img/04.jpg" alt="リフォーム・駐車場まわり" loading="lazy"></figure><div class="service-body"><h3>リフォーム・駐車場まわり</h3><p>クロスなどの内装リフォームから、駐車場のライン引き・アスファルト補修、ブロック塀・門扉の塗装、ウッドデッキの塗装・補修まで。</p><div class="tags"><span class="tag">内装</span><span class="tag">駐車場</span><span class="tag">外回り</span></div></div></article></div>
+  </div>
+</section>
+
+<!-- ===================== Works ===================== -->
+<section class="sec sec--n sec--navy sec--loose works" id="works" data-block aria-labelledby="works-title">
+  <div class="wrap">
+    <div class="works-intro">
+      <div class="sec-head reveal">
+        <p class="sec-label"><span class="sec-no" aria-hidden="true"></span><span class="sec-en">Works</span></p>
+        <h2 class="sec-title" id="works-title">施工事例</h2>
+      </div>
+      <p class="works-note reveal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="M16 16l4.5 4.5M11 8.5v5M8.5 11h5"/></svg>写真をタップすると拡大します</p>
+    </div>
+    <div class="works-grid blk" id="worksGrid" data-stagger><figure class="work" data-num="01"><img src="img/01.jpg" alt="外壁塗装の仕上げ" loading="lazy"><figcaption><span class="work-title">外壁塗装の仕上げ</span><span class="work-date">2025.10</span></figcaption></figure><figure class="work" data-num="02"><img src="img/03.jpg" alt="屋根塗装 上塗り" loading="lazy"><figcaption><span class="work-title">屋根塗装 上塗り</span><span class="work-date">2025.10</span></figcaption></figure><figure class="work" data-num="03"><img src="img/02.jpg" alt="塗装前の下準備" loading="lazy"><figcaption><span class="work-title">塗装前の下準備</span><span class="work-date">2025.10</span></figcaption></figure><figure class="work" data-num="04"><img src="img/05.jpg" alt="自社職人による施工" loading="lazy"><figcaption><span class="work-title">自社職人による施工</span><span class="work-date">2025.10</span></figcaption></figure></div>
+  </div>
+</section>
+
+<!-- ===================== Reasons ===================== -->
+<section class="sec sec--n sec--alt" id="reasons" data-block aria-labelledby="reasons-title">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="sec-label"><span class="sec-no" aria-hidden="true"></span><span class="sec-en">Reasons</span></p>
+      <h2 class="sec-title" id="reasons-title">選ばれる理由</h2>
+    </div>
+    <ol class="reason-list blk" data-stagger><li class="reason"><span class="reason-num">01</span><div><h3>自社職人が施工します</h3><p>20年の経験を持つ自社職人が、一つひとつの現場を担当します。</p></div></li><li class="reason"><span class="reason-num">02</span><div><h3>見えない部分にもこだわる</h3><p>仕上がりの美しさだけでなく、下準備や見えない部分の仕事にも手を抜きません。</p></div></li><li class="reason"><span class="reason-num">03</span><div><h3>リピート・ご紹介のご依頼</h3><p>一度施工したお客様から、小さなご相談ごとやリピート、ご紹介のご依頼をいただいています。</p></div></li><li class="reason"><span class="reason-num">04</span><div><h3>住まいの外回りをまとめて相談</h3><p>塗装・防水・リフォーム・駐車場まわりまで、一社で対応できます。</p></div></li></ol>
+  </div>
+</section>
+
+<!-- ===================== Flow ===================== -->
+<section class="sec sec--n sec--tight" id="flow" data-block aria-labelledby="flow-title">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="sec-label"><span class="sec-no" aria-hidden="true"></span><span class="sec-en">Flow</span></p>
+      <h2 class="sec-title" id="flow-title">ご依頼の流れ</h2>
+    </div>
+    <ol class="flow-list blk" data-stagger><li class="step"><span class="step-num">STEP 1</span><h3>お問い合わせ</h3><p>InstagramのDMやメールから、外壁・屋根の気になるところをお聞かせください。</p></li><li class="step"><span class="step-num">STEP 2</span><h3>現地調査・お見積もり</h3><p>現地を計測・調査し、塗料や工法のご提案とお見積もりをご案内します。</p></li><li class="step"><span class="step-num">STEP 3</span><h3>施工</h3><p>足場・洗浄・下地処理・養生を経て、下塗り・中塗り・上塗りまで仕上げます。</p></li><li class="step"><span class="step-num">STEP 4</span><h3>完了確認</h3><p>お客様と一緒に仕上がりを確認して完了です。</p></li></ol>
+  </div>
+</section>
+
+<!-- ===================== Area ===================== -->
+<section class="sec sec--n sec--alt sec--tight" id="area" aria-labelledby="area-title">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="sec-label"><span class="sec-no" aria-hidden="true"></span><span class="sec-en">Area</span></p>
+      <h2 class="sec-title" id="area-title">対応エリア</h2>
+    </div>
+    <div class="area-grid">
+      <div class="area-base reveal">
+        <p class="lbl">BASE</p>
+        <p class="city">藤沢市</p>
+        <p class="line">藤沢市の外壁・屋根塗装</p>
+      </div>
+      <div class="reveal" style="--d:.12s">
+        <p class="area-lbl opt" data-for="areaChips">主な対応エリア</p>
+        <ul class="chips opt" id="areaChips"><li>藤沢市</li><li>茅ヶ崎市</li><li>鎌倉市</li><li>平塚市</li><li>横浜市</li><li>神奈川県全域</li></ul>
+        <div class="area-actions">
+          <a class="btn" data-cta href="https://ig.me/m/mot.tosou">InstagramのDMで相談する<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== FAQ ===================== -->
+<section class="sec sec--n sec--tight" id="faq" data-block aria-labelledby="faq-title">
+  <div class="wrap faq-wrap">
+    <div class="sec-head sec-head--center reveal">
+      <p class="sec-label"><span class="sec-no" aria-hidden="true"></span><span class="sec-en">FAQ</span></p>
+      <h2 class="sec-title" id="faq-title">よくある質問</h2>
+    </div>
+    <div class="faq-list blk reveal"><details class="faq-item"><summary>対応エリアはどこですか？</summary><div class="faq-a"><p>藤沢市を拠点に、神奈川県全域に対応しています。</p></div></details><details class="faq-item"><summary>塗装以外の工事も頼めますか？</summary><div class="faq-a"><p>はい。防水工事、内装・外装リフォーム、駐車場のライン引きやアスファルト補修なども対応しています。</p></div></details><details class="faq-item"><summary>相談はどこからできますか？</summary><div class="faq-a"><p>InstagramのDM、またはメール（maruonitosou@gmail.com）からご連絡ください。</p></div></details></div>
+  </div>
+</section>
+
+<!-- ===================== Company ===================== -->
+<section class="sec sec--n sec--alt" id="company" aria-labelledby="company-title">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="sec-label"><span class="sec-no" aria-hidden="true"></span><span class="sec-en">Company</span></p>
+      <h2 class="sec-title" id="company-title">会社概要</h2>
+    </div>
+    <div class="company-grid">
+      <table class="info-table reveal">
+        <tbody><tr><th>会社名</th><td>株式会社MOT</td></tr><tr><th>所在地</th><td>神奈川県藤沢市村岡東2-20-13<br>ミリョーレ202</td></tr><tr><th>営業時間</th><td>8:30〜17:00／日曜・祝日定休</td></tr><tr><th>メール</th><td>maruonitosou@gmail.com</td></tr><tr><th>事業内容</th><td>外壁塗装／屋根塗装・屋根工事／防水工事／内装・外装リフォーム／駐車場施工・ライン引き</td></tr></tbody>
+      </table>
+      <aside class="address-card reveal" style="--d:.12s" aria-label="所在地">
+        <p class="lbl">ACCESS</p>
+        <p class="shop">株式会社MOT</p>
+        <p class="kana">モト</p>
+        <address>神奈川県藤沢市村岡東2-20-13<br>ミリョーレ202</address>
+        <div class="links">
+          <a class="btn btn--ghost" href="https://www.google.com/maps/search/?api=1&query=%E6%A0%AA%E5%BC%8F%E4%BC%9A%E7%A4%BEMOT%20%E8%97%A4%E6%B2%A2%E5%B8%82%E6%9D%91%E5%B2%A1%E6%9D%B12-20-13" target="_blank" rel="noopener">地図を開く<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M12 21s-6.5-5.6-6.5-11a6.5 6.5 0 0 1 13 0c0 5.4-6.5 11-6.5 11z"/><circle cx="12" cy="10" r="2.3"/></svg></a>
+          <a class="btn btn--ghost" data-tel href="tel:"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M5 4h3.5l1.8 4.4-2.3 1.4a11 11 0 0 0 6.2 6.2l1.4-2.3L20 15.5V19a1.5 1.5 0 0 1-1.6 1.5A16.5 16.5 0 0 1 3.5 5.6 1.5 1.5 0 0 1 5 4z"/></svg></a>
+          <a class="btn btn--ghost" href="https://www.instagram.com/mot.tosou/" target="_blank" rel="noopener">Instagram<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r=".9" fill="currentColor" stroke="none"/></svg></a>
+        </div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== Contact ===================== -->
+<section class="sec sec--navy contact" id="contact" aria-labelledby="contact-title">
+  <div class="wrap">
+    <div class="sec-head sec-head--center reveal">
+      <p class="sec-label"><span class="sec-no en" aria-hidden="true">CONTACT</span></p>
+      <h2 class="sec-title" id="contact-title">ご相談・お問い合わせ</h2>
+    </div>
+    <p class="contact-shop reveal">株式会社MOT　藤沢市の外壁・屋根塗装</p>
+    <div class="contact-cta reveal" style="--d:.12s">
+      <a class="btn btn--main" data-cta href="https://ig.me/m/mot.tosou">InstagramのDMで相談する<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <div class="contact-sub">
+        <a class="contact-tel" data-tel href="tel:"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M5 4h3.5l1.8 4.4-2.3 1.4a11 11 0 0 0 6.2 6.2l1.4-2.3L20 15.5V19a1.5 1.5 0 0 1-1.6 1.5A16.5 16.5 0 0 1 3.5 5.6 1.5 1.5 0 0 1 5 4z"/></svg><span class="v"></span></a>
+        <a class="contact-ig" href="https://www.instagram.com/mot.tosou/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r=".9" fill="currentColor" stroke="none"/></svg><span class="v">@mot.tosou</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ===================== Footer ===================== -->
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-info">
+        <a class="brand" href="#top">
+          <span class="brand-mark" aria-hidden="true">M</span>
+          <span class="brand-text">
+            <span class="brand-name">株式会社MOT</span>
+            <span class="brand-kana">モト</span>
+          </span>
+        </a>
+        <address>神奈川県藤沢市村岡東2-20-13<br>ミリョーレ202</address>
+        <p class="opt">神奈川県藤沢市村岡東</p>
+      </div>
+      <nav class="footer-nav" aria-label="フッターメニュー">
+        <ul>
+          <li><a href="#services">工事・サービス</a></li>
+          <li><a href="#works">施工事例</a></li>
+          <li><a href="#reasons">選ばれる理由</a></li>
+          <li><a href="#flow">ご依頼の流れ</a></li>
+          <li><a href="#area">対応エリア</a></li>
+          <li><a href="#faq">よくある質問</a></li>
+          <li><a href="#company">会社概要</a></li>
+          <li><a href="#contact">お問い合わせ</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="copy">
+      <span>外壁塗装・防水・リフォーム｜藤沢市</span>
+      <small>&copy; 株式会社MOT</small>
+    </div>
+  </div>
+</footer>
+
+<!-- ===================== Mobile dock ===================== -->
+<nav class="dock" id="dock" aria-label="お問い合わせ">
+  <a class="dock-tel" data-tel href="tel:"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M5 4h3.5l1.8 4.4-2.3 1.4a11 11 0 0 0 6.2 6.2l1.4-2.3L20 15.5V19a1.5 1.5 0 0 1-1.6 1.5A16.5 16.5 0 0 1 3.5 5.6 1.5 1.5 0 0 1 5 4z"/></svg>電話</a>
+  <a class="dock-cta" data-cta href="https://ig.me/m/mot.tosou"><span>InstagramのDMで相談する</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+</nav>
+
+<!-- ===================== Lightbox ===================== -->
+<dialog class="lb" id="lb" aria-label="施工事例の拡大表示">
+  <p class="lb-count" aria-live="polite"></p>
+  <figure class="lb-stage">
+    <div class="lb-frame"><img class="lb-img" alt=""></div>
+    <figcaption class="lb-cap"><span class="c-title"></span><span class="c-date"></span></figcaption>
+  </figure>
+  <button class="lb-btn lb-close" type="button" aria-label="閉じる"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+  <button class="lb-btn lb-prev" type="button" aria-label="前の写真"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M15 5l-7 7 7 7"/></svg></button>
+  <button class="lb-btn lb-next" type="button" aria-label="次の写真"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M9 5l7 7-7 7"/></svg></button>
+</dialog>
+
+<script>
+(function(){
+  var d = document, $ = function(s, c){ return (c || d).querySelector(s); }, $$ = function(s, c){ return Array.prototype.slice.call((c || d).querySelectorAll(s)); };
+  var txt = function(el){ return el ? el.textContent.replace(/\s+/g, ' ').trim() : ''; };
+
+  /* 空のブロック系セクションは非表示にし、ナビからも外す（番号はCSSカウンタで自動で詰まる） */
+  $$('[data-block]').forEach(function(sec){
+    var b = $('.blk', sec);
+    if (b && !b.children.length && !b.textContent.trim()){
+      sec.hidden = true;
+      $$('a[href="#' + sec.id + '"]').forEach(function(a){ var li = a.closest('li'); (li || a).hidden = true; });
+    }
+  });
+  $$('.opt').forEach(function(el){ if (!el.textContent.trim() && !el.querySelector('img')) el.hidden = true; });
+  $$('[data-for]').forEach(function(el){ var t = d.getElementById(el.getAttribute('data-for')); if (!t || t.hidden) el.hidden = true; });
+
+  /* CTA が電話の場合は電話ボタンの重複を避ける。外部URLは別タブ */
+  var cta = $('[data-cta]'), href = cta ? (cta.getAttribute('href') || '') : '';
+  if (/^tel:/i.test(href)) $$('[data-tel]').forEach(function(a){ a.hidden = true; });
+  if (/^https?:/i.test(href)) $$('[data-cta]').forEach(function(a){ a.target = '_blank'; a.rel = 'noopener'; });
+
+  /* ヘッダー・ドック */
+  var header = $('.site-header'), dock = $('#dock'), hero = $('.hero');
+  var onScroll = function(){
+    var y = window.scrollY;
+    header.classList.toggle('is-scrolled', y > 8);
+    if (dock) dock.classList.toggle('is-shown', y > (hero ? hero.offsetHeight * .5 : 200));
+  };
+  window.addEventListener('scroll', onScroll, { passive: true }); onScroll();
+
+  /* モバイルメニュー */
+  var menuBtn = $('.menu-btn'), nav = $('#gnav');
+  if (menuBtn && nav){
+    var setMenu = function(open){ nav.classList.toggle('is-open', open); menuBtn.setAttribute('aria-expanded', open); menuBtn.setAttribute('aria-label', open ? 'メニューを閉じる' : 'メニューを開く'); };
+    menuBtn.addEventListener('click', function(){ setMenu(!nav.classList.contains('is-open')); });
+    nav.addEventListener('click', function(e){ if (e.target.closest('a')) setMenu(false); });
+    d.addEventListener('keydown', function(e){ if (e.key === 'Escape') setMenu(false); });
+  }
+
+  /* スクロールでフェードイン */
+  $$('[data-stagger]').forEach(function(g){
+    Array.prototype.forEach.call(g.children, function(c, i){ c.classList.add('reveal'); c.style.setProperty('--d', (i % 4) * .08 + 's'); });
+  });
+  var rv = $$('.reveal');
+  if ('IntersectionObserver' in window){
+    var io = new IntersectionObserver(function(es){
+      es.forEach(function(e){ if (e.isIntersecting){ e.target.classList.add('is-in'); io.unobserve(e.target); } });
+    }, { rootMargin: '0px 0px -8% 0px', threshold: .08 });
+    rv.forEach(function(el){ io.observe(el); });
+  } else rv.forEach(function(el){ el.classList.add('is-in'); });
+
+  /* ライトボックス（施工事例） */
+  var grid = $('#worksGrid'), lb = $('#lb');
+  if (!grid || !lb || $('#works').hidden) return;
+  var lbImg = $('.lb-img', lb), cTitle = $('.c-title', lb), cDate = $('.c-date', lb), count = $('.lb-count', lb), idx = 0, list = [];
+  var isImgHref = function(h){ return /\.(jpe?g|png|webp|avif|gif)(\?.*)?$/i.test(h || ''); };
+  var cardOf = function(im){ var n = im; while (n.parentElement && n.parentElement !== grid) n = n.parentElement; return n; };
+  var titleOf = function(card, im){
+    var t = txt($('h3, h4, [class*="title"]', card)) || txt($('figcaption', card)) || (im && im.alt) || '';
+    var dt = txt($('time, [class*="date"]', card));
+    if (dt && t.indexOf(dt) > -1) t = t.replace(dt, '').trim();
+    return { t: t, d: dt };
+  };
+
+  var refresh = function(){
+    list = $$('img', grid);
+    list.forEach(function(im){
+      if (!im.closest('a')){ im.tabIndex = 0; im.setAttribute('role', 'button'); im.setAttribute('aria-label', (im.alt ? im.alt + ' ' : '') + '拡大表示'); }
+    });
+    lb.classList.toggle('is-single', list.length < 2);
+  };
+  var show = function(i){
+    idx = (i + list.length) % list.length;
+    var im = list[idx], a = im.closest('a'), info = titleOf(cardOf(im), im);
+    lbImg.src = (a && isImgHref(a.getAttribute('href'))) ? a.href : (im.currentSrc || im.src);
+    lbImg.alt = im.alt || '';
+    cTitle.textContent = info.t; cDate.textContent = info.d;
+    count.textContent = String(idx + 1).padStart(2, '0') + ' / ' + String(list.length).padStart(2, '0');
+  };
+  var returnTo = null;
+  var open = function(i, from){
+    refresh(); if (!list.length) return; show(i < 0 ? 0 : i);
+    returnTo = from || null;
+    d.documentElement.classList.add('lb-lock');
+    if (lb.showModal) lb.showModal(); else lb.setAttribute('open', '');
+  };
+  var close = function(){ if (lb.close) lb.close(); else lb.removeAttribute('open'); };
+  lb.addEventListener('close', function(){
+    d.documentElement.classList.remove('lb-lock');
+    var im = list[idx], t = returnTo || (im && (im.closest('a') || im));
+    if (t) t.focus({ preventScroll: true });
+  });
+
+  grid.addEventListener('click', function(e){
+    var a = e.target.closest('a'), im = e.target.closest('img') || (a && a.querySelector('img'));
+    if (!im || !grid.contains(im)) return;
+    if (a){ var h = a.getAttribute('href') || ''; if (h && h !== '#' && !isImgHref(h)) return; e.preventDefault(); }
+    refresh(); open(list.indexOf(im));
+  });
+  grid.addEventListener('keydown', function(e){
+    if ((e.key === 'Enter' || e.key === ' ') && e.target.tagName === 'IMG'){ e.preventDefault(); refresh(); open(list.indexOf(e.target)); }
+  });
+  $('.lb-close', lb).addEventListener('click', close);
+  $('.lb-prev', lb).addEventListener('click', function(){ show(idx - 1); });
+  $('.lb-next', lb).addEventListener('click', function(){ show(idx + 1); });
+  lb.addEventListener('click', function(e){ if (e.target === lb || e.target.classList.contains('lb-stage')) close(); });
+  lb.addEventListener('keydown', function(e){
+    if (e.key === 'ArrowLeft') show(idx - 1);
+    else if (e.key === 'ArrowRight') show(idx + 1);
+    else if (e.key === 'Escape' && !lb.showModal) close();
+  });
+  var sx = null;
+  lb.addEventListener('touchstart', function(e){ sx = e.touches[0].clientX; }, { passive: true });
+  lb.addEventListener('touchend', function(e){
+    if (sx === null || list.length < 2) return;
+    var dx = e.changedTouches[0].clientX - sx; sx = null;
+    if (Math.abs(dx) > 50) show(idx + (dx < 0 ? 1 : -1));
+  });
+
+  /* ファーストビュー下：施工事例の写真を小さく並べ、件数を表示（実データのみ使用） */
+  refresh();
+  var hw = $('#heroWorks');
+  if (hw && list.length){
+    var thumbs = $('.hw-thumbs', hw), max = window.matchMedia('(max-width: 560px)').matches ? 3 : 4;
+    $('.hw-count', hw).innerHTML = String(list.length).padStart(2, '0') + '<small>件</small>';
+    list.slice(0, max).forEach(function(im, i){
+      var info = titleOf(cardOf(im), im), b = d.createElement('button'), t = d.createElement('img'), n = d.createElement('span');
+      b.type = 'button'; b.setAttribute('aria-label', (info.t || '施工事例') + ' を拡大表示');
+      t.src = im.getAttribute('src'); t.alt = ''; t.loading = 'lazy'; t.decoding = 'async';
+      n.className = 'n'; n.textContent = String(i + 1).padStart(2, '0');
+      b.appendChild(t); b.appendChild(n);
+      b.addEventListener('click', function(){ open(i, b); });
+      thumbs.appendChild(b);
+    });
+    hw.hidden = false;
+  }
+})();
+</script>
+</body>
+</html>
